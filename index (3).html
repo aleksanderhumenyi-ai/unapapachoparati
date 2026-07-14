@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Apapacho — Diseño Floral en CDMX</title>
+<meta name="description" content="Arreglos florales hechos con cariño en Xochimilco, Coyoacán y Álvaro Obregón. Catálogo, envíos y sucursales de Casa Apapacho.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine: #8a1533;
+    --wine-dark: #5e0e23;
+    --coral: #e2794f;
+    --gold: #cf9b3e;
+    --blush: #fdf2ee;
+    --blush-card: #fbe4dd;
+    --cream: #fffaf7;
+    --ink: #3a2a2c;
+    --ink-soft: #6b5457;
+    --line: rgba(138,21,51,0.14);
+    --shadow: 0 12px 30px rgba(94,14,35,0.10);
+    --radius: 22px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--blush);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif; margin:0; color:var(--wine-dark); font-weight:600;}
+  .script{font-family:'Caveat',cursive; font-weight:700;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    font-family:'Inter',sans-serif; text-transform:uppercase; letter-spacing:.14em;
+    font-size:.72rem; font-weight:700; color:var(--coral);
+  }
+
+  /* ===== NAV ===== */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(253,242,238,0.88); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .navrow{display:flex; align-items:center; justify-content:space-between; padding:14px 24px;}
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+  .brand-mark{width:38px; height:38px; flex:none;}
+  .brand-name{font-family:'Caveat',cursive; font-weight:700; font-size:1.65rem; color:var(--wine-dark); line-height:1;}
+  .brand-sub{font-size:.58rem; letter-spacing:.16em; text-transform:uppercase; color:var(--coral); display:block; margin-top:2px;}
+  nav.links{display:flex; gap:26px; font-size:.92rem; font-weight:500;}
+  nav.links a{text-decoration:none; color:var(--ink-soft); transition:color .2s;}
+  nav.links a:hover{color:var(--wine);}
+  .nav-cta{
+    background:var(--wine); color:#fff; padding:10px 20px; border-radius:100px;
+    font-weight:600; font-size:.88rem; text-decoration:none; white-space:nowrap;
+    transition:background .2s;
+  }
+  .nav-cta:hover{background:var(--wine-dark);}
+  .burger{display:none;}
+
+  /* ===== HERO ===== */
+  .hero{position:relative; overflow:hidden; padding:64px 0 40px;}
+  .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;}
+  .hero-side-label{
+    position:absolute; right:8px; top:80px; writing-mode:vertical-rl;
+    font-family:'Fraunces',serif; font-weight:600; letter-spacing:.08em;
+    color:var(--wine); font-size:.95rem; opacity:.55;
+  }
+  h1.hero-title{font-size:clamp(2.6rem, 5.4vw, 4.4rem); line-height:0.98;}
+  h1.hero-title .script{display:block; font-size:1.3em; color:var(--wine); margin-top:6px;}
+  .hero-copy{margin:22px 0 30px; color:var(--ink-soft); font-size:1.08rem; max-width:46ch;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:600;
+    padding:14px 26px; border-radius:100px; font-size:.95rem; transition:transform .18s, box-shadow .18s;
+    border:2px solid transparent;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--wine); color:#fff; box-shadow:var(--shadow);}
+  .btn-ghost{border-color:var(--wine); color:var(--wine);}
+  .hero-art{position:relative; aspect-ratio:1/1; max-width:420px; margin:0 auto;}
+  .hero-blob{
+    position:absolute; inset:0; background:var(--blush-card); border-radius:44% 56% 62% 38% / 48% 42% 58% 52%;
+  }
+  .hero-flowers{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;}
+  .contact-strip{
+    display:flex; flex-wrap:wrap; gap:10px 26px; margin-top:26px; font-size:.9rem; color:var(--ink-soft);
+  }
+  .contact-strip strong{color:var(--wine-dark);}
+
+  /* ===== SECTION BASICS ===== */
+  section{padding:76px 0;}
+  .section-head{max-width:640px; margin-bottom:46px;}
+  .section-head h2{font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-top:8px;}
+  .divider-heart{width:26px; height:26px; margin:18px auto; opacity:.7;}
+
+  /* ===== PILARES ===== */
+  .pilares{background:var(--cream); border-radius:36px;}
+  .pilares-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .pilar{
+    background:var(--blush); border-radius:20px; padding:26px 20px; text-align:center;
+    border:1px solid var(--line);
+  }
+  .pilar-num{
+    width:34px; height:34px; border-radius:50%; background:var(--wine); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif;
+    font-weight:600; margin:0 auto 14px; font-size:.95rem;
+  }
+  .pilar p{font-weight:600; color:var(--wine-dark); font-size:.98rem; margin:0;}
+
+  /* ===== CATALOGO ===== */
+  .cat-tabs{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px;}
+  .cat-tab{
+    padding:8px 18px; border-radius:100px; border:1.5px solid var(--line); background:#fff;
+    font-size:.85rem; font-weight:600; color:var(--ink-soft); cursor:pointer; transition:all .2s;
+  }
+  .cat-tab.active, .cat-tab:hover{background:var(--wine); border-color:var(--wine); color:#fff;}
+  .product-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .card{
+    background:#fff; border-radius:var(--radius); padding:26px; border:1px solid var(--line);
+    box-shadow:var(--shadow); display:flex; flex-direction:column; gap:12px;
+  }
+  .card-top{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
+  .card h3{font-size:1.2rem;}
+  .price{
+    font-family:'Fraunces',serif; font-weight:700; color:var(--coral); font-size:1.15rem; white-space:nowrap;
+  }
+  .card ul{margin:0; padding-left:18px; color:var(--ink-soft); font-size:.88rem; line-height:1.7;}
+  .card .tag{font-size:.72rem; color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:.06em;}
+
+  .extras-box{
+    margin-top:44px; background:var(--wine); border-radius:28px; padding:38px 34px; color:#fff;
+    display:grid; grid-template-columns:1fr 1.4fr; gap:28px; align-items:center;
+  }
+  .extras-box h3{color:#fff; font-size:1.5rem;}
+  .extras-box p.lead{color:rgba(255,255,255,.85); margin-top:8px;}
+  .extras-list{display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; font-size:.92rem;}
+  .extras-list div{display:flex; justify-content:space-between; border-bottom:1px dashed rgba(255,255,255,.28); padding-bottom:8px;}
+  .extras-list b{color:#ffd9a8;}
+
+  .includes-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px;}
+  .includes-card{text-align:center; padding:20px;}
+  .includes-card .ic{font-size:1.8rem; margin-bottom:10px;}
+  .includes-card h4{font-family:'Fraunces',serif; color:var(--wine-dark); margin-bottom:6px; font-size:1.05rem;}
+  .includes-card p{color:var(--ink-soft); font-size:.88rem; margin:0;}
+
+  /* ===== PASOS ===== */
+  .steps{background:var(--cream); border-radius:36px;}
+  .steps-row{display:grid; grid-template-columns:repeat(3,1fr); gap:26px; counter-reset:step;}
+  .step{position:relative; padding:30px 24px; background:var(--blush); border-radius:20px; border:1px solid var(--line);}
+  .step-n{font-family:'Fraunces',serif; font-size:2.4rem; color:var(--coral); font-weight:700; opacity:.5; line-height:1;}
+  .step h4{margin-top:10px; font-size:1.1rem;}
+  .step p{color:var(--ink-soft); font-size:.9rem; margin-top:6px;}
+
+  /* ===== ENVIOS ===== */
+  .envios-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
+  .price-table{width:100%; border-collapse:collapse; background:#fff; border-radius:18px; overflow:hidden; box-shadow:var(--shadow);}
+  .price-table th, .price-table td{padding:14px 18px; text-align:left; font-size:.92rem;}
+  .price-table thead{background:var(--wine); color:#fff;}
+  .price-table tbody tr:nth-child(odd){background:var(--blush);}
+  .price-table td:last-child, .price-table th:last-child{text-align:right; font-weight:600; color:var(--wine-dark);}
+  .policy-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px;}
+  .policy-list li{
+    display:flex; gap:12px; background:#fff; padding:16px 18px; border-radius:16px; border:1px solid var(--line);
+    font-size:.9rem; color:var(--ink-soft);
+  }
+  .policy-list .dot{color:var(--coral); font-weight:800; flex:none;}
+  .note-box{
+    margin-top:20px; background:var(--blush-card); border-left:4px solid var(--coral); border-radius:0 14px 14px 0;
+    padding:16px 18px; font-size:.85rem; color:var(--ink-soft);
+  }
+
+  /* ===== SUCURSALES ===== */
+  .suc-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
+  .suc-card{
+    background:#fff; border-radius:var(--radius); padding:28px; border:1px solid var(--line); box-shadow:var(--shadow);
+  }
+  .suc-card h3{font-size:1.3rem; margin-bottom:4px;}
+  .suc-card .suc-zone{color:var(--coral); font-weight:600; font-size:.85rem; margin-bottom:14px; display:block;}
+  .suc-addr{
+    background:var(--blush); border-radius:14px; padding:14px 16px; font-size:.92rem; margin-bottom:16px;
+    display:flex; gap:10px; align-items:flex-start;
+  }
+  .suc-near{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:.86rem; color:var(--ink-soft);}
+  .suc-near li{display:flex; gap:8px;}
+  .suc-near li::before{content:"•"; color:var(--gold); font-weight:800;}
+  .suc-map-link{
+    display:inline-block; margin-top:16px; font-size:.85rem; font-weight:700; color:var(--wine);
+    text-decoration:none; border-bottom:2px solid var(--coral);
+  }
+
+  /* ===== CUIDADO ===== */
+  .cuidado-row{display:grid; grid-template-columns:repeat(6,1fr); gap:16px;}
+  .cuidado-card{background:#fff; border-radius:18px; padding:20px 16px; text-align:center; border:1px solid var(--line);}
+  .cuidado-n{
+    width:30px; height:30px; border-radius:50%; background:var(--gold); color:#fff; font-weight:700;
+    display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-size:.85rem; font-family:'Fraunces',serif;
+  }
+  .cuidado-card h5{font-size:.92rem; color:var(--wine-dark); margin-bottom:6px; font-family:'Fraunces',serif;}
+  .cuidado-card p{font-size:.78rem; color:var(--ink-soft); margin:0;}
+
+  /* ===== PAGO ===== */
+  .pago-box{
+    background:var(--wine); border-radius:28px; padding:40px; color:#fff; display:grid;
+    grid-template-columns:1fr 1fr; gap:30px; align-items:center;
+  }
+  .pago-box h3{color:#fff;}
+  .pago-fields{display:flex; flex-direction:column; gap:14px;}
+  .pago-fields div{background:rgba(255,255,255,.1); border-radius:14px; padding:14px 18px;}
+  .pago-fields span{display:block; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:#ffd9a8;}
+  .pago-fields b{font-size:1.05rem;}
+
+  /* ===== FAQ ===== */
+  .faq{max-width:800px; margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line); padding:20px 0;}
+  .faq-q{
+    display:flex; justify-content:space-between; align-items:center; cursor:pointer; font-weight:600;
+    color:var(--wine-dark); font-family:'Fraunces',serif; font-size:1.05rem; gap:20px;
+  }
+  .faq-q .plus{transition:transform .25s; font-size:1.4rem; color:var(--coral); flex:none;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease; color:var(--ink-soft); font-size:.92rem;}
+  .faq-item.open .faq-a{max-height:300px; margin-top:12px;}
+
+  /* ===== CTA FINAL ===== */
+  .cta-final{
+    text-align:center; background:linear-gradient(135deg, var(--wine), var(--wine-dark));
+    border-radius:36px; padding:60px 30px; color:#fff;
+  }
+  .cta-final h2{color:#fff; font-size:clamp(1.8rem,3.6vw,2.6rem);}
+  .cta-final p{color:rgba(255,255,255,.85); max-width:50ch; margin:14px auto 26px;}
+  .cta-final .btn-primary{background:#fff; color:var(--wine);}
+  .cta-final .btn-primary:hover{background:var(--blush);}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--wine-dark); color:rgba(255,255,255,.85); padding:50px 0 26px; margin-top:20px;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:36px; padding-bottom:30px; border-bottom:1px solid rgba(255,255,255,.15);}
+  footer h4{color:#fff; font-family:'Fraunces',serif; font-size:1rem; margin-bottom:14px;}
+  footer .brand-name{color:#fff;}
+  footer ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:9px; font-size:.9rem;}
+  footer a{text-decoration:none; color:rgba(255,255,255,.8);}
+  footer a:hover{color:#fff;}
+  .foot-bottom{display:flex; justify-content:space-between; padding-top:22px; font-size:.8rem; flex-wrap:wrap; gap:10px;}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px){
+    nav.links{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-side-label{display:none;}
+    .pilares-grid{grid-template-columns:repeat(2,1fr);}
+    .product-grid{grid-template-columns:repeat(2,1fr);}
+    .extras-box{grid-template-columns:1fr;}
+    .extras-list{grid-template-columns:1fr;}
+    .includes-grid{grid-template-columns:1fr;}
+    .steps-row{grid-template-columns:1fr;}
+    .envios-grid{grid-template-columns:1fr;}
+    .suc-grid{grid-template-columns:1fr;}
+    .cuidado-row{grid-template-columns:repeat(3,1fr);}
+    .pago-box{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr; gap:24px;}
+  }
+  @media (max-width: 560px){
+    .product-grid{grid-template-columns:1fr;}
+    .cuidado-row{grid-template-columns:repeat(2,1fr);}
+    section{padding:56px 0;}
+  }
+
+  :focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important; scroll-behavior:auto !important;} }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap navrow">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 55 L50 20 L90 55 L82 55 L82 85 L18 85 L18 55 Z" fill="#8a1533"/>
+        <circle cx="50" cy="65" r="6" fill="#e2794f"/>
+        <circle cx="38" cy="70" r="5" fill="#cf9b3e"/>
+        <circle cx="62" cy="70" r="5" fill="#cf9b3e"/>
+        <path d="M50 20 L50 12" stroke="#e2794f" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="50" cy="9" r="3.5" fill="#e2794f"/>
+      </svg>
+      <span>
+        <span class="brand-name">Casa Apapacho</span>
+        <span class="brand-sub">Diseño Floral</span>
+      </span>
+    </a>
+    <nav class="links">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#envios">Envíos</a>
+      <a href="#sucursales">Sucursales</a>
+      <a href="#cuidado">Cuidados</a>
+      <a href="#faq">Dudas</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/525543954503" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <span class="hero-side-label">ELIGE TU APAPACHO FAVORITO · 2026</span>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Diseño floral en CDMX</span>
+        <h1 class="hero-title">Momentos que se quedan<span class="script">en el corazón.</span></h1>
+        <p class="hero-copy">Arreglos florales hechos a mano en Xochimilco, Coyoacán y Álvaro Obregón. Cada apapacho se arma con flor fresca, cariño real y logística que cuida cada entrega.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="https://wa.me/525543954503" target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
+          <a class="btn btn-ghost" href="#catalogo">Ver catálogo</a>
+        </div>
+        <div class="contact-strip">
+          <span><strong>Tel / WhatsApp:</strong> 55 43 95 45 03</span>
+          <span><strong>Instagram:</strong> @casaapapachoo</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-blob"></div>
+        <div class="hero-flowers">
+          <svg viewBox="0 0 300 300" width="82%" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <ellipse cx="150" cy="220" rx="6" ry="70" fill="#7fae7a"/>
+              <g transform="translate(150,120)">
+                <circle cx="0" cy="-38" r="26" fill="#f3c8c2"/>
+                <circle cx="34" cy="-16" r="26" fill="#eda98f"/>
+                <circle cx="34" cy="20" r="26" fill="#f3c8c2"/>
+                <circle cx="0" cy="42" r="26" fill="#e2794f"/>
+                <circle cx="-34" cy="20" r="26" fill="#f3c8c2"/>
+                <circle cx="-34" cy="-16" r="26" fill="#eda98f"/>
+                <circle cx="0" cy="0" r="20" fill="#cf9b3e"/>
+              </g>
+              <g transform="translate(90,170)">
+                <circle cx="0" cy="-16" r="12" fill="#8a1533"/>
+                <circle cx="14" cy="-6" r="12" fill="#c14c62"/>
+                <circle cx="14" cy="10" r="12" fill="#8a1533"/>
+                <circle cx="0" cy="18" r="12" fill="#c14c62"/>
+                <circle cx="-14" cy="10" r="12" fill="#8a1533"/>
+                <circle cx="-14" cy="-6" r="12" fill="#c14c62"/>
+                <circle cx="0" cy="2" r="9" fill="#fff3ea"/>
+              </g>
+              <g transform="translate(215,185)">
+                <circle cx="0" cy="-14" r="10" fill="#f3c8c2"/>
+                <circle cx="12" cy="-5" r="10" fill="#eda98f"/>
+                <circle cx="12" cy="9" r="10" fill="#f3c8c2"/>
+                <circle cx="0" cy="16" r="10" fill="#eda98f"/>
+                <circle cx="-12" cy="9" r="10" fill="#f3c8c2"/>
+                <circle cx="-12" cy="-5" r="10" fill="#eda98f"/>
+                <circle cx="0" cy="1" r="7" fill="#cf9b3e"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES -->
+  <section class="pilares">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Lo que nos mueve</span>
+        <h2>Nuestros pilares</h2>
+      </div>
+      <div class="pilares-grid">
+        <div class="pilar"><div class="pilar-num">1</div><p>Nuestros apapachadores son lo más importante</p></div>
+        <div class="pilar"><div class="pilar-num">2</div><p>Apapacho al cliente</p></div>
+        <div class="pilar"><div class="pilar-num">3</div><p>Mentalidad 10X</p></div>
+        <div class="pilar"><div class="pilar-num">4</div><p>Innovación, adaptación al cambio y crecimiento constante</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOGO -->
+  <section id="catalogo">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Catálogo 2026</span>
+        <h2>Elige tu apapacho favorito</h2>
+        <p style="color:var(--ink-soft); margin-top:10px;">Agenda hoy y recibe mañana. Todos nuestros apapachos pueden personalizarse según tu presupuesto y paleta de colores.</p>
+      </div>
+
+      <div class="product-grid">
+        <div class="card">
+          <div class="card-top"><h3>Apapacho de la Casa</h3><span class="price">$450</span></div>
+          <span class="tag">Envuelto</span>
+          <ul><li>Lilí, crisantemo malibú, margaritas dragón</li><li>6 rosas, crisantemo conchita amarillo</li><li>Perritos rosas, astromelias blancas y rosas</li><li>Envuelto con papel floral y tela rosa</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho de la Casa</h3><span class="price">$680</span></div>
+          <span class="tag">Adaptado en caja · Oasis</span>
+          <ul><li>Crisantemo malibú, margaritas, rosas</li><li>Crisantemo conchita, perritos rosas</li><li>Astromelias blancas y rosas</li><li>Follaje premium de temporada</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho de Ternura</h3><span class="price">$180</span></div>
+          <span class="tag">Armado en abanico</span>
+          <ul><li>1 lilí con botones</li><li>5 astromelias</li><li>5 margaritas</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho de Cariño</h3><span class="price">$840</span></div>
+          <span class="tag">Follaje premium</span>
+          <ul><li>5 lisianthus, 6 rosas</li><li>10 astromelias rosas, 10 blancas</li><li>5 astromelias amarillas</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho de Corazón</h3><span class="price">$380</span></div>
+          <span class="tag">Falda de papel coreano</span>
+          <ul><li>12 rosas</li><li>15 astromelias</li><li>Armado tradicional, tallos cubiertos con elegancia</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho de Suavidad</h3><span class="price">$480</span></div>
+          <span class="tag">Armado vertical</span>
+          <ul><li>2 lisianthus morados, 4 chenas</li><li>4 rosas blancas, 3 nardos</li><li>Papel blanco con bordes transparentes, listón rosa</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho Perfecto</h3><span class="price">$360</span></div>
+          <span class="tag">Tonos amarillos</span>
+          <ul><li>1 girasol, 2 lilis amarillos</li><li>3 rosas amarillas, 5 crisantemos concha</li><li>5 astromelias amarillas, 1 perrito amarillo</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Cubetita Apapacho</h3><span class="price">$390–$500</span></div>
+          <span class="tag">Dos versiones</span>
+          <ul><li>Hortensia azul en cubeta grande</li><li>O bien: lisianthus lila, crisantemos, claveles</li><li>Varas de statice y dólar mini</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho Buchón</h3><span class="price">$1,100</span></div>
+          <span class="tag">Grande</span>
+          <ul><li>50 rosas rojas</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho en Florero</h3><span class="price">Desde $400</span></div>
+          <span class="tag">Personalizable</span>
+          <ul><li>Flores mixtas acorde a presupuesto</li><li>Astromelias, mini rosa, clavel, statice o parvifolia</li><li>Florero incluido</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho Real</h3><span class="price">$280</span></div>
+          <span class="tag">Compacto</span>
+          <ul><li>2 lisianthus, 2 rosas fucsia, 2 rosas crema</li><li>2 encajes, 1 vara de parvifolia</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho para Llevar</h3><span class="price">$340</span></div>
+          <span class="tag">Florero con asa</span>
+          <ul><li>Flores mixtas acorde a presupuesto</li><li>Astromelias, crisantemos amarillos, canter y follaje</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho en Taza</h3><span class="price">$220</span></div>
+          <span class="tag">Detalle tierno</span>
+          <ul><li>Mix de crisantemos</li><li>Margaritas</li><li>Statice de colores</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho en Cubetita</h3><span class="price">$320</span></div>
+          <span class="tag">Colores a elegir</span>
+          <ul><li>8 claveles y 8 crisantemos a elección</li><li>2 varas de solidago</li><li>Flores y colores adaptables</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho de Amor</h3><span class="price">$380</span></div>
+          <span class="tag">Armado abierto</span>
+          <ul><li>12 rosas rojas, 6 dólar, 8 hypericum</li><li>Papel coreano palo de rosa con corazones</li><li>Listón rojo liso</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho Ideal</h3><span class="price">$380</span></div>
+          <span class="tag">Filos dorados</span>
+          <ul><li>Lilí amarillo, conchitas y astromelias amarillas</li><li>Mini rosas y perritos amarillos</li><li>Papel blanco liso, listón dorado</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho Tulipanes Amarillos</h3><span class="price">$680</span></div>
+          <span class="tag">Bouquet</span>
+          <ul><li>10 tulipanes amarillos</li><li>Papel blanco liso</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho de Rosas Blush</h3><span class="price">$420</span></div>
+          <span class="tag">Armado vertical en escalera</span>
+          <ul><li>10 rosas rosas, 2 perritos rosas, 1 lilí rosa</li><li>Nube alrededor de las rosas</li><li>Filos dorados, listón lila</li></ul>
+        </div>
+        <div class="card">
+          <div class="card-top"><h3>Apapacho Ratoncitos</h3><span class="price">$350</span></div>
+          <span class="tag">Apapacho tierno</span>
+          <ul><li>Cubetita flower and garden negra</li><li>3 crisantemos bombón</li><li>Verónicas</li></ul>
+        </div>
+      </div>
+
+      <div class="extras-box">
+        <div>
+          <h3>Añade apapachitos extras</h3>
+          <p class="lead">Complementa tu arreglo con un detalle adicional.</p>
+        </div>
+        <div class="extras-list">
+          <div><span>Taza pequeña</span> <b>+$150</b></div>
+          <div><span>Taza grande</span> <b>+$200</b></div>
+          <div><span>Chocolates (Ferrero/Lindt 4pz)</span> <b>$100</b></div>
+          <div><span>Peluche</span> <b>+$230</b></div>
+          <div><span>Marco de fotos</span> <b>+$200</b></div>
+          <div><span>Florero mediano</span> <b>+$150</b></div>
+          <div><span>Florero grande</span> <b>+$200</b></div>
+        </div>
+      </div>
+
+      <div class="includes-grid">
+        <div class="includes-card"><div class="ic">💌</div><h4>Dedicatoria personalizada</h4><p>Tarjeta impresa con tus palabras apapachadoras en cada ramo o arreglo.</p></div>
+        <div class="includes-card"><div class="ic">🎀</div><h4>Tela y listón</h4><p>Detalle decorativo en todos los apapachos.</p></div>
+        <div class="includes-card"><div class="ic">🌿</div><h4>Floralife</h4><p>Vitamina incluida para prolongar el ciclo de vida de tus flores.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PASOS -->
+  <section class="steps">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Es muy fácil</span>
+        <h2>Pasos para comprar</h2>
+      </div>
+      <div class="steps-row">
+        <div class="step"><div class="step-n">1</div><h4>Envíanos un mensaje</h4><p>Te guiaremos para que elijas la mejor opción según tu idea y presupuesto.</p></div>
+        <div class="step"><div class="step-n">2</div><h4>Aparta con el 50%</h4><p>Se pide un anticipo del 50% del valor de tu pedido para agendar la elaboración.</p></div>
+        <div class="step"><div class="step-n">3</div><h4>Liquida el día de entrega</h4><p>El día de la entrega liquidas el monto restante (100% si es envío a domicilio).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENVIOS -->
+  <section id="envios">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Logística de entrega</span>
+        <h2>Costos y cobertura de envío</h2>
+        <p style="color:var(--ink-soft); margin-top:10px;">Alguien llevando y cuidando tu apapacho en todo momento, con seguridad de entrega y manejo delicado.</p>
+      </div>
+      <div class="envios-grid">
+        <div>
+          <table class="price-table">
+            <thead><tr><th>Distancia</th><th>Costo aproximado</th></tr></thead>
+            <tbody>
+              <tr><td>1 a 4 km</td><td>$70.00</td></tr>
+              <tr><td>4 a 8 km</td><td>$90.00</td></tr>
+              <tr><td>8 a 15 km</td><td>$100.00</td></tr>
+              <tr><td>Más de 15 km</td><td>Consultar</td></tr>
+            </tbody>
+          </table>
+          <div class="note-box">Cotización mínima con 24 horas de anticipación. Consulta disponibilidad para tu fecha. Pedidos con envío requieren un valor mínimo de $250.00 MXN.</div>
+        </div>
+        <ul class="policy-list">
+          <li><span class="dot">•</span>Compártenos la ubicación exacta por Google Maps vía WhatsApp — no se aceptan solo capturas o descripciones de texto.</li>
+          <li><span class="dot">•</span>El chofer espera un máximo de 20 minutos en el domicilio; si no hay respuesta, el pedido regresa a sucursal.</li>
+          <li><span class="dot">•</span>Entrega a terceros (vecino, recepción, seguridad) solo con autorización expresa y por escrito del remitente.</li>
+          <li><span class="dot">•</span>Ventana de desfase de hasta 2 horas por tránsito, clima o cierres viales.</li>
+          <li><span class="dot">•</span>Un reenvío por ausencia del destinatario implica cubrir el costo de envío nuevamente.</li>
+          <li><span class="dot">•</span>Anticipo del 50% para agendar; el envío a domicilio requiere liquidar el 100% antes de salir de sucursal.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCURSALES -->
+  <section id="sucursales">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Visítanos</span>
+        <h2>Nuestras sucursales</h2>
+      </div>
+      <div class="suc-grid">
+        <div class="suc-card">
+          <h3>Las Flores "Altavista"</h3>
+          <span class="suc-zone">Álvaro Obregón</span>
+          <div class="suc-addr">📍 Av. Las Flores #516, Col. Flor de María, Alcaldía Álvaro Obregón, C.P. 01760, CDMX.</div>
+          <ul class="suc-near">
+            <li>Frente al Bachillerato Alexander Bain</li>
+            <li>A 5 min de los Tribunales Colegiados de Circuito</li>
+            <li>A 5 min del Panteón Jardín</li>
+            <li>A 5 min del Salón de Fiestas La Textilera</li>
+          </ul>
+          <a class="suc-map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Av.+Las+Flores+516+Col.+Flor+de+Maria+Alvaro+Obregon+CDMX">Cómo llegar →</a>
+        </div>
+        <div class="suc-card">
+          <h3>Plaza Floresta</h3>
+          <span class="suc-zone">Coapa / Tlalpan</span>
+          <div class="suc-addr">📍 Av. Prolongación División del Norte #4158, Hacienda El Valparaíso 2, Local 13, Col. Floresta Coyoacán, C.P. 14310, CDMX.</div>
+          <ul class="suc-near">
+            <li>A 7 min de Gran Terraza Coapa</li>
+            <li>A 7 min de Galerías Coapa</li>
+            <li>A 7 min de Paseo Acoxpa</li>
+            <li>Entre Calzada del Hueso y Calzada Acoxpa</li>
+          </ul>
+          <a class="suc-map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Av.+Prolongacion+Division+del+Norte+4158+Local+13+Floresta+Coyoacan+CDMX">Cómo llegar →</a>
+        </div>
+        <div class="suc-card">
+          <h3>Prepa 1</h3>
+          <span class="suc-zone">Xochimilco</span>
+          <div class="suc-addr">📍 Prolongación Ignacio Aldama 27, Paseos del Sur, Xochimilco, C.P. 16010, CDMX.</div>
+          <ul class="suc-near">
+            <li>Frente a la Escuela Nacional Preparatoria 1 (UNAM)</li>
+            <li>Frente a la estación del Metrobús Prepa 1</li>
+            <li>Muy cerca del SAT Xochimilco Sur</li>
+            <li>A 5 min del Residencial Bosques del Sur</li>
+          </ul>
+          <a class="suc-map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Prolongacion+Ignacio+Aldama+27+Paseos+del+Sur+Xochimilco+CDMX">Cómo llegar →</a>
+        </div>
+        <div class="suc-card">
+          <h3>Tepepan</h3>
+          <span class="suc-zone">Xochimilco</span>
+          <div class="suc-addr">📍 Av. de Las Torres 51, Amp Tepepan, Xochimilco, C.P. 16024, CDMX.</div>
+          <ul class="suc-near">
+            <li>A 1 min del Colegio Alemán Alexander Von Humboldt</li>
+            <li>A 5 min de la estación del Tren Ligero La Noria</li>
+            <li>A 5 min del Museo Dolores Olmedo Patiño</li>
+            <li>A 10 min del Deportivo Cruz Azul (La Noria)</li>
+          </ul>
+          <a class="suc-map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Av.+de+Las+Torres+51+Amp+Tepepan+Xochimilco+CDMX">Cómo llegar →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUIDADO -->
+  <section id="cuidado">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Para que dure más</span>
+        <h2>Guía de cuidado para tus apapachos</h2>
+      </div>
+      <div class="cuidado-row">
+        <div class="cuidado-card"><div class="cuidado-n">1</div><h5>Llegada</h5><p>Lugar fresco, luz solar indirecta.</p></div>
+        <div class="cuidado-card"><div class="cuidado-n">2</div><h5>Preparar</h5><p>Poner la mitad del sobre Floral Life.</p></div>
+        <div class="cuidado-card"><div class="cuidado-n">3</div><h5>Disolver</h5><p>Disolver el sobre en el agua.</p></div>
+        <div class="cuidado-card"><div class="cuidado-n">4</div><h5>Cortar</h5><p>Tallos en diagonal, con tijeras o cuchillo.</p></div>
+        <div class="cuidado-card"><div class="cuidado-n">5</div><h5>Hidratar</h5><p>Colocar tallos y asegurar que toquen agua.</p></div>
+        <div class="cuidado-card"><div class="cuidado-n">6</div><h5>Mantenimiento</h5><p>Cambiar el agua 1 día sí y 1 día no.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGO -->
+  <section id="pago">
+    <div class="wrap">
+      <div class="pago-box">
+        <div>
+          <span class="eyebrow" style="color:#ffd9a8;">Transferencia bancaria</span>
+          <h3>Datos de pago</h3>
+          <p style="color:rgba(255,255,255,.8); margin-top:10px; font-size:.92rem;">Envíanos tu comprobante al WhatsApp para confirmar tu pedido.</p>
+          <a class="btn" style="background:#fff;color:var(--wine); margin-top:16px;" href="https://wa.me/525543954503" target="_blank" rel="noopener">Enviar comprobante →</a>
+        </div>
+        <div class="pago-fields">
+          <div><span>Beneficiario</span><b>Apapacho</b></div>
+          <div><span>Banco</span><b>Banamex</b></div>
+          <div><span>Número de cuenta</span><b>002180701418735100</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+        <span class="eyebrow">Resolvemos tus dudas</span>
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Qué pasa si no hay la flor exacta del catálogo? <span class="plus">+</span></div>
+          <div class="faq-a">Al trabajar con flor fresca de temporada, en caso de no contar con la flor exacta se sustituye por una de color, textura y valor similar, cuidando que no afecte la estética ni el volumen del arreglo.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Puedo cancelar o reagendar mi pedido? <span class="plus">+</span></div>
+          <div class="faq-a">Una vez liquidado el anticipo del 50% no se aceptan devoluciones en efectivo, pero puedes reagendar tu entrega con un mínimo de 24 horas de anticipación (sujeto a disponibilidad y posibles ajustes de temporada). No se permiten cambios si el pedido ya está elaborado o falta menos de 24 horas para la entrega.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Cómo funciona el pago? <span class="plus">+</span></div>
+          <div class="faq-a">Se requiere un anticipo del 50% para agendar tu pedido. Si tu pedido incluye envío a domicilio, se liquida el 100% antes de salir de sucursal; si recoges en sucursal, liquidas el resto el día de la entrega.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Puedo pedir el mismo día? <span class="plus">+</span></div>
+          <div class="faq-a">Los pedidos express (menos de 24 horas) están sujetos a disponibilidad de flor y logística. En estos casos la política de no reembolso aplica de inmediato tras confirmar el pago, y una vez elaborado el arreglo no se admiten cambios ni cancelaciones.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">¿Qué pasa si no encuentran al destinatario? <span class="plus">+</span></div>
+          <div class="faq-a">Nuestro chofer espera un máximo de 20 minutos en el domicilio. Si no se logra la entrega, el pedido regresa a la sucursal de origen para que lo recojas, o se programa un reenvío cubriendo el costo de envío nuevamente.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section>
+    <div class="wrap">
+      <div class="cta-final">
+        <h2>Diseñamos momentos que se quedan en el corazón</h2>
+        <p>Cuéntanos tu idea y presupuesto, y te ayudamos a elegir el apapacho perfecto.</p>
+        <a class="btn btn-primary" href="https://wa.me/525543954503" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="brand-name script" style="font-size:1.6rem;">Casa Apapacho</span>
+        <p style="margin-top:12px; font-size:.9rem; max-width:32ch;">Diseñamos momentos que se quedan en el corazón. Diseño floral en Xochimilco, Coyoacán y Álvaro Obregón, CDMX.</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:5543954503">Tel. 55 43 95 45 03</a></li>
+          <li><a href="https://wa.me/525543954503" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://instagram.com/casaapapachoo" target="_blank" rel="noopener">@casaapapachoo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sucursales</h4>
+        <ul>
+          <li>Altavista — Av. Las Flores #516</li>
+          <li>Plaza Floresta — Coapa/Tlalpan</li>
+          <li>Prepa 1 — Xochimilco</li>
+          <li>Tepepan — Xochimilco</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Casa Apapacho Diseño Floral.</span>
+      <span>Hecho con cariño para ti.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
